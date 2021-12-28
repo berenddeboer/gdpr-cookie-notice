@@ -1,11 +1,14 @@
-// Load locales
-var gdprCookieNoticeLocales = {};
+import Cookies from "js-cookie";
+import "./templates";
 
-function gdprCookieNotice(config) {
+// Load locales
+export var gdprCookieNoticeLocales = {};
+
+export function gdprCookieNotice(config) {
   var namespace = 'gdprcookienotice';
   var pluginPrefix = 'gdpr-cookie-notice';
   var templates = window[pluginPrefix+'-templates'];
-  var gdprCookies = Cookies.noConflict();
+  var gdprCookies = Cookies
   var modalLoaded = false;
   var noticeLoaded = false;
   var cookiesAccepted = false;
